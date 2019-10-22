@@ -168,51 +168,84 @@ Alle mogelijke stijlen die je via CSS kan toekennen kan je vinden op https://www
 
 Een sliding puzzle, net als veel andere bordspellen, kunnen we in JavaScript voorstellen als een tweedimensionale lijst.
 
-Onderstaande code toont een tweedimensionale lijst die de Sliding Puzzle uit de afbeelding bovenaan deze pagina voorstelt. We hebben de waarde 0 gekozen voor het lege vakje.
+Onderstaande code definieert een tweedimensionale lijst die de Sliding Puzzle uit de afbeelding bovenaan deze pagina voorstelt. We hebben de waarde 0 gekozen voor het lege vakje.
 
 ``` JavaScript
 
-let puzzle = [[0, 1, 2],
-              [7, 4, 8],
-              [3, 5, 6]];
+let my_puzzle = [[0, 1, 2],
+                 [7, 4, 8],
+                 [3, 5, 6]];
 
 ```
-Het doel van deze sectie is om via JavaScript bovenstaande lijst om te zetten in correcte HTML-code.
 
-Open nu het bestand *code.js* en lees de code. 
+Het doel van deze sectie is om een JavaScript-functie te schrijven die bovenstaande lijstrepresentatie om kan zetten in HTML.
 
-De functie *draw_puzzle* in dit bestand zoekt naar een tag in de HTML-pagina met als *id* *puzzle_container*.
-Vervolgens wordt de functie *generate_puzzle_html* opgeroepen om vanuit de bovenstaande puzzle-lijst een
-correcte HTML-string te genereren. Deze HTML-string wordt nadien in de *puzzle_container* geplaatst.
+Onderstaande code toont het einddoel van deze sectie.
+De functie *generate_puzzle_html* wordt opgeroepen met als input de lijstrepresentatie van onze puzzel.
+Het resultaat van de functie is de HTML-voorstelling van diezelfde puzzel.
+De functie zet dus de lijstrepresentatie om in de HTML-representatie:
+
+``` JavaScript
+
+generate_puzzle_html(my_puzzle)
+>> "<table><tr><td class=\"emptyTile\"></td><td>1</td><td>2</td></tr><tr><td>7</td><td>4</td><td>8</td></tr><tr><td>3</td><td>5</td><td>6</td></tr></table>"
+```
+
+### Opdracht
 
 Voeg allereerst aan je HTML-bestand een *div* toe met als id *puzzle_container*.
-Hierin zal je gegenereerde HTML-code toegevoegd worden.
+Hierin zal de gegenereerde HTML-code toegevoegd worden.
 
 ``` HTML
 <div id="puzzle_container"></div>
 ```
 
-### Opdracht
-
-Vul nu de functie *generate_puzzle_html* in *code.js* aan zodat het resultaat van de functie een HTML-weergave is van de meegegeven puzzel.
+Vul nu de functie *generate_puzzle_html* in *code.js* aan zodat het resultaat van de functie een HTML-weergave is van de meegegeven puzzel, zoals in het bovenstaande voorbeeld.
 
 Baseer je op de HTML die je geschreven hebt in het eerste deel van deze oefenzitting.
 
-Om de functie te testen kan je het bestand *index.html* openen in Firefox.
-
-Indien de code correct werkt, toont de pagina de gegenereerde sliding puzzle in de *puzzle_container*.
+Indien de code correct werkt, zal de pagina de gegenereerde sliding puzzle toevoegen aan de *puzzle_container*.
+De code die hiervoor zorgt is reeds meegeleverd in de functie *draw_puzzle*.
 
 Indien de code niet correct werkt, open dan de Developer Tools van Firefox. Open vervolgens de debugger en plaats break points op kritische punten in je code. Inspecteer de waarden van je variabelen en probeer te achterhalen wat fout loopt.
 
-Bestudeer voor tips de oplossing in *./hoorcollege/ex7/code.js*.
+Bestudeer voor tips de oplossing in *./hoorcollege/ex7/code.js*. De functie *generate_board_html* van deze oefening werkt zeer gelijkaardig.
 
 ## Deel 3: Spelfunctionaliteit
 
 Op dit punt in de oefenzitting heeft je spel een lay-out die automatisch gegenereerd kan worden vanuit de interne lijstrepresentatie.
 
-De volgende stap zal bestaat eruit JavaScript-functies te schrijven die op basis van deze interne representatie ons toelaten het spel te spelen.
+### Modeloplossing
 
-Voeg onderstaande functies toe aan *code.js*. Gebruik telkens de *Console* in de *Developer Tools* om deze functies te testen.
+Indien je aan de start van de tweede oefenzitting nog niet op dit punt bent gekomen, kan je voor de volgende delen verder werken vanaf een modeloplossing.
+
+Indien je eigen aanpassingen hebt gemaakt aan de bestanden in *solution*, zal je deze wijzigingen eerst moeten committen.
+
+``` bash
+$ cd /pad/naar/oefenzitting-javascript
+$ git add code.js
+$ git add stylesheet.css
+$ git add index.html
+$ git commit -m "Eigen oplossing"
+```
+
+Deze code maakt een back-up van je eigen oplossingsbestanden. Je kan deze in de toekomst dus telkens herstellen.
+
+Voer vervolgens de volgende commando's uit om de modeloplossing te laden:
+
+``` bash
+$ cd /pad/naar/oefenzitting-javascript
+$ git checkout deel2
+
+```
+
+Door dit commando uit te voeren wordt de inhoud van de modeloplossing in de folder *solution* geplaatst.
+
+### Opdracht
+
+In deze sectie schrijven we JavaScript-functies die op basis van de interne lijstrepresentatie van een puzzel ons toelaten het spel te spelen.
+
+Voeg onderstaande functies toe aan *code.js*. Gebruik telkens de *Console* in de *Developer Tools* om deze functies te testen. De voorbeelden tonen telkens de console-output die we verwachten indien je functie correct is geschreven.
 
 ### Functies
 
