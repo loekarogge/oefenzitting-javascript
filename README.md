@@ -3,7 +3,7 @@
 
 In deze oefenzitting zullen we een Sliding Puzzle maken in HTML, CSS en JavaScript. 
 
-Deze oefenzitting wordt afgewerkt in twee sessies. Zorg ervoor dat je klaar bent met deel 1 en deel 2 *voor* de start van de tweede oefenzitting.
+> :warning: Deze oefenzitting wordt afgewerkt in twee sessies. Zorg ervoor dat je klaar bent met deel 1 en deel 2 *voor* de start van de tweede oefenzitting.
 
 # Inhoudsopgave
 
