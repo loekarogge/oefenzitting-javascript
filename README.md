@@ -1,10 +1,35 @@
-# JavaScript Sliding Puzzle
 
 ![alt text](sliding-puzzle.png "Voorbeeld van een Sliding Puzzle")
 
 In deze oefenzitting zullen we een Sliding Puzzle maken in HTML, CSS en JavaScript.
 
-## Voorbereiding
+# Inhoudsopgave
+
+- [Inhoudsopgave](#inhoudsopgave)
+- [Voorbereiding](#voorbereiding)
+- [Structuur repository](#structuur-repository)
+- [Toolchain](#toolchain)
+  - [Editor](#editor)
+  - [Web browser](#web-browser)
+    - [Developer tools](#developer-tools)
+      - [Opdrachten](#opdrachten)
+- [Opdrachten](#opdrachten-1)
+  - [Deel 1: Lay-out maken](#deel-1-lay-out-maken)
+    - [Basisstructuur HTML](#basisstructuur-html)
+    - [Tabel opstellen](#tabel-opstellen)
+    - [Stijl toevoegen](#stijl-toevoegen)
+      - [Basisstructuur CSS](#basisstructuur-css)
+      - [Stijl toekennen](#stijl-toekennen)
+  - [Deel 2: Interne representatie](#deel-2-interne-representatie)
+    - [Doel](#doel)
+    - [Opdracht](#opdracht)
+  - [Deel 3: Spelfunctionaliteit](#deel-3-spelfunctionaliteit)
+    - [Modeloplossing](#modeloplossing)
+    - [Opdracht](#opdracht-1)
+    - [Functies](#functies)
+  - [Extra uitdagingen](#extra-uitdagingen)
+
+# Voorbereiding
 
 Start met deze oefenzitting door de repository te clonen naar je eigen machine.
 
@@ -12,10 +37,12 @@ Start met deze oefenzitting door de repository te clonen naar je eigen machine.
 $ git clone https://github.com/informatica-werktuigen/oefenzitting-javascript.git
 ```
 
-## Structuur repository
+# Structuur repository
 
 - ./hoorcollege: in deze folder kan je de verschillende codevoorbeelden uit de les nakijken
 - ./oplossing: in deze folder plaats je je eigen oplossing voor deze oefenzitting
+
+# Toolchain
 
 ## Editor
 
@@ -67,6 +94,7 @@ Voer onderstaande opdrachten uit met behulp van de Developer tools. Ververs indi
 * Druk op de Run-pijl bovenaan om de code verder uit te voeren tot het volgende breakpoint. Observeer hoe de waarden van `table_inner_html` en `row_html` evolueren na elke iteratie van de lus.
 * Open de *Style editor* en zorg ervoor dat alle rode vakjes paars worden.
 
+# Opdrachten
 
 ## Deel 1: Lay-out maken
 
@@ -97,12 +125,12 @@ Hello, world!
 * Laat 1 cel leeg. Deze cel stelt het lege vakje op de schuifpuzzel voor.
 
 
-## Stijl toevoegen
+### Stijl toevoegen
 
 Om deze tabel wat groter, mooier en duidelijker te maken zullen we door middel van *CSS* stijlen toevoegen.
 
 
-### Basisstructuur CSS
+#### Basisstructuur CSS
 
 Met behulp van CSS kan je stijlen toekennen aan HTML-tags (en hun inhoud).
 
@@ -150,7 +178,7 @@ In de CSS stylesheet kunnen we nu de stijl van de klasse *my_class* vastleggen.
 ```
 Als resultaat krijgen beide de *div* en de paragraaf (*p*) een zwarte doorlopende rand van 1 pixel. 
 
-### Stijl toekennen
+#### Stijl toekennen
 
 * Open het bestand `stylesheet.css`. 
 
@@ -262,7 +290,7 @@ Voeg onderstaande functies toe aan `code.js`. Gebruik telkens de *Console* in de
 
     Deze functie krijgt als argument de puzzel (voorgesteld als lijst). De functie moet `true` returnen indien de sliding puzzle correct is opgelost, en 'false' op alle andere momenten. De puzzel is correct opgelost indien alle nummers in de juiste volgorde staan met het lege vakje onderaan rechts.
         
-    Test de functie met behulp van de console.
+    * Implementeer de functie en test met behulp van de console:
     ``` JavaScript
     
     >> check_game_complete(my_puzzle)
@@ -271,15 +299,15 @@ Voeg onderstaande functies toe aan `code.js`. Gebruik telkens de *Console* in de
     true
     ```
 
-    Hint: vergelijk twee lijsten door met een lus elk indivueel element apart te vergelijken
+    > :bulb: Vergelijk twee lijsten door met een lus elk indivueel element apart te vergelijken
 
 
 * ```function swap_empty_square(puzzle, row, col)```
 
     Deze functie krijgt als invoer de huidige puzzel voorgesteld als lijst en een rij en kolom op het bord. 
-    Deze functie wisselt het vakje op die positie op het spelbord met het lege vakje.
+    De functie wisselt het vakje op die positie op het spelbord met het lege vakje.
     
-    Test de functie met behulp van de console.
+    * Implementeer de functie en test met behulp van de console:
     ``` JavaScript
     >> swap_empty_square(my_puzzle, 1, 0)
     undefined
@@ -289,12 +317,13 @@ Voeg onderstaande functies toe aan `code.js`. Gebruik telkens de *Console* in de
     
     Na uitvoering van deze functies zou het lege vakje moeten wisselen met het vakje met waarde 7.
     
-    Zorg er nu ook voor dat de wissel enkel wordt uitgevoerd indien het lege vakje naast de meegegeven positie ligt.
+    * Zorg er nu ook voor dat de wissel enkel wordt uitgevoerd indien het lege vakje naast de meegegeven positie ligt.
     Verifieer nadien opnieuw met de console.
     
 * ```function square_click_handler(cell)```
     
     Ten slotte schrijven we de functie die opgeroepen zal worden telkens wanneer we klikken op een plaats op het spelbord.
+
     
     Met onderstaande code kan je opvragen op welke positie geklikt er geklikt werd:
     
@@ -302,14 +331,12 @@ Voeg onderstaande functies toe aan `code.js`. Gebruik telkens de *Console* in de
       let col = cell.cellIndex;
       let row = cell.parentNode.rowIndex;
     ```
-    
-    Zorg ervoor dat de code gebruik maakt van de functie ```swap_empty_square``` om het vakje waarop geklikt werd te wisselen met het lege vakje.
-    
-    Zorg er vervolgens voor dat het spelbord opnieuw getekend wordt met behulp van ```draw_puzzle```.
-    
-    Controleer ten slotte met ```check_game_complete``` of het spel correct is opgelost. 
-    
-    Indien dit het geval is, voer dan de code  ```alert("Proficiat!");``` uit.
+
+    * Implementeer deze functie.
+      * Zorg ervoor dat de code gebruik maakt van de functie ```swap_empty_square``` om het vakje waarop geklikt werd te wisselen met het lege vakje.
+      * Zorg er vervolgens voor dat het spelbord opnieuw getekend wordt met behulp van ```draw_puzzle```.
+      * Controleer met ```check_game_complete``` of het spel correct is opgelost. 
+      * Indien het spel correct is opgelost, voer dan de code  ```alert("Proficiat!");``` uit.
     
     Om dit te testen willen we ervoor zorgen dat wanneer er op een cel geklikt wordt, ```square_click_handler``` correct wordt opgeroepen.
 
@@ -320,12 +347,12 @@ Voeg onderstaande functies toe aan `code.js`. Gebruik telkens de *Console* in de
     ``` html
     <td onclick="square_click_handler(this)"></td>
     ```
-    Zorg ervoor dat deze onclick handler mee toegevoegd wordt bij het genereren van de HTML-code.
+    * Zorg ervoor dat het onclick-attribuut correct mee toegevoegd wordt bij het genereren van de HTML-representatie van het bord.
 
-    Als dit correct uitgevoerd wordt, heb je nu een werkende Sliding Puzzle.
+    > :heavy_check_mark: Als dit correct uitgevoerd wordt, heb je nu een werkende Sliding Puzzle.
 
 ## Extra uitdagingen
 
-* [ ] Zorg ervoor dat het spelbord willekeurig gegenereerd wordt. Let erop dat niet alle schuifpuzzels oplosbaar zijn
-* [ ] Zorg ervoor dat de de grootte van de schuifpuzzel gekozen kan worden door de speler (bijvoorbeeld 4x4 of 5x5)
-* [ ] Voeg een timer toe die bijhoudt hoe lang je erover doet om een puzzel op te lossen
+* Zorg ervoor dat het spelbord willekeurig gegenereerd wordt. Let erop dat niet alle schuifpuzzels oplosbaar zijn
+* Zorg ervoor dat de de grootte van de schuifpuzzel gekozen kan worden door de speler (bijvoorbeeld 4x4 of 5x5)
+* Voeg een timer toe die bijhoudt hoe lang je erover doet om een puzzel op te lossen
