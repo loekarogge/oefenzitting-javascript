@@ -326,8 +326,6 @@ Voeg onderstaande functies toe aan `code.js`. Gebruik telkens de *Console* in de
 
 ## Extra uitdagingen
 
-* Zorg ervoor dat het spelbord willekeurig gegenereerd wordt. Let erop dat niet alle schuifpuzzels oplosbaar zijn
-
-* Zorg ervoor dat de de grootte van de schuifpuzzel gekozen kan worden door de speler (bijvoorbeeld 4x4 of 5x5)
-
-* Voeg een timer toe die bijhoudt hoe lang je erover doet om een puzzel op te lossen
+* [ ] Zorg ervoor dat het spelbord willekeurig gegenereerd wordt. Let erop dat niet alle schuifpuzzels oplosbaar zijn
+* [ ] Zorg ervoor dat de de grootte van de schuifpuzzel gekozen kan worden door de speler (bijvoorbeeld 4x4 of 5x5)
+* [ ] Voeg een timer toe die bijhoudt hoe lang je erover doet om een puzzel op te lossen
