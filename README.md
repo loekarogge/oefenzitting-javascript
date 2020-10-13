@@ -65,12 +65,12 @@ Voer onderstaande opdrachten uit met behulp van de Developer tools. Ververs indi
 * Verander de waarden in `update_board` en probeer op die manier een X te plaatsen in het middelste vakje. Hint: met de <kbd>&#8593;</kbd>-toets kan je het vorig ingevoerde commando terug ophalen.
 * Zoek en open het bestand  `code.js` in de *Debugger*. Plaats een breakpoint in de binnenste for-loop van de functie `generate_board_html` door op de nummer van die regel te klikken.  Klik vervolgens op een vakje van het spelbord. Inspecteer de waarden van de variabele `table_inner_html` in de rechtse kolom van de debugger (onder *scopes*). 
 * Druk op de Run-pijl bovenaan om de code verder uit te voeren tot het volgende breakpoint. Observeer hoe de waarden van `table_inner_html` en `row_html` evolueren na elke iteratie van de lus.
-* Open de *Style editor* en zorg ervoor dat alle rode vakjes paars worden
+* Open de *Style editor* en zorg ervoor dat alle rode vakjes paars worden.
 
 
 ## Deel 1: Lay-out maken
 
-Open in de folder *oplossing* in je repository het bestand met de naam *index.html*.
+Open in de folder *oplossing* in je repository het bestand met de naam `index.html`.
 Dit bestand bevat een algemeen skelet dat je kan gebruiken voor elke mogelijke html-pagina.
 
 ### Basisstructuur HTML
@@ -91,7 +91,7 @@ Hello, world!
 </body>
 ```
 
- * Vervang de tekst *Hello, world!* in *index.html* door een tabel van 3x3. Maak hiervoor gebruik van de tags *table*, *tr* en *td*. 
+ * Vervang de tekst *Hello, world!* in `index.html` door een tabel van 3x3. Maak hiervoor gebruik van de tags *table*, *tr* en *td*. 
  Bekijk [deze link](https://www.w3schools.com/html/html_tables.asp) indien je niet weet hoe je een HTML-tabel moet maken.
 * Vul in elke cel van de tabel een uniek nummer in van 1 tot en met 8.
 * Laat 1 cel leeg. Deze cel stelt het lege vakje op de schuifpuzzel voor.
@@ -152,7 +152,7 @@ Als resultaat krijgen beide de *div* en de paragraaf (*p*) een zwarte doorlopend
 
 ### Stijl toekennen
 
-* Open het bestand stylesheet.css. 
+* Open het bestand `stylesheet.css`. 
 
 Probeer met behulp van CSS de lay-out in de afbeelding bovenaan deze pagina na te maken. 
 De kleuren mag je zelf kiezen. 
@@ -163,7 +163,7 @@ Zorg ervoor dat:
   * Het lege vakje dezelfde achtergrondkleur heeft als de tabel zelf
   * De tekst in de vakjes gecentreerd is
 
-Als voorbeeld kan je kijken naar het bestand ./hoorcollege/ex7/stylesheet.css.
+Als voorbeeld kan je kijken naar het bestand `./hoorcollege/ex7/stylesheet.css.`
 
 Alle mogelijke stijlen die je via CSS kan toekennen kan je vinden op https://www.w3schools.com/cssref/.
 
