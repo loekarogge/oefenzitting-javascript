@@ -44,23 +44,27 @@ Indien je gebruik maakt van een andere web browser is het je eigen taak om de eq
 
 Voor je begint aan de oefenzitting is het een goed idee vertrouwd te geraken met de Developer Tools van Firefox.
 
-Open het laatste voorbeeld uit de oefenzitting  (*./hoorcollege/ex7/index.html*) in Firefox.
+* Open het laatste voorbeeld uit de oefenzitting  (*./hoorcollege/ex7/index.html*) in Firefox.
 
-Druk vervolgens op de toetsenbordcombinatie <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>I</kbd> (of <kbd>COMMAND</kbd>+<kbd>OPTION</kbd>+<kbd>I</kbd> voor Mac).
+```shell
+cd oefenzitting-javascript
+firefox hoorcollege/ex7/index.html
+```
 
-Let er op dat alle aanpassingen die je maakt in de Developer Tools tijdelijk zijn en ongedaan worden gemaakt na het verversen van de pagina.
+* Druk op de toetsenbordcombinatie <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>I</kbd> (of <kbd>COMMAND</kbd>+<kbd>OPTION</kbd>+<kbd>I</kbd> voor Mac) om de developer Tools te openen.
 
-Gebruik voor permanente wijzigingen je editor naar keuze.
+> :warning: Let er op dat alle aanpassingen die je maakt in de Developer Tools tijdelijk zijn en ongedaan worden gemaakt na het verversen van de pagina.
+Gebruik voor permanente wijzigingen een editor naar keuze.
 
-Voer nu onderstaande opdrachten uit met behulp van de Developer tools. Ververs indien nodig de pagina om eventuele wijzigingen ongedaan te maken.
+Voer onderstaande opdrachten uit met behulp van de Developer tools. Ververs indien nodig de pagina om eventuele wijzigingen ongedaan te maken.
 
 #### Opdrachten
 
 * Verwijder met behulp van de *Inspector* de Reset-knop op de pagina
-* Open de console. Voer deze functie uit: *update_board(my_board, 0, 1, 2)*. Observeer wat er gebeurt
-* Verander de waarden in het *update_board*-commando en probeer op die manier een X te plaatsen in het middelste vakje. Hint: met de <kbd>&#8593;</kbd>-toets kan je het vorig ingevoerde commando terug ophalen.
-* Zoek en open het bestand  *code.js* in de *Debugger*. Plaats een breakpoint in de binnenste for-loop van de functie *generate_board_html* door op de nummer van die regel te klikken.  Klik vervolgens op een vakje van het spelbord. Inspecteer de waarden van de variabele *table_inner_html* in de rechtse kolom van de debugger (onder *scopes*). 
-* Druk op de Run-pijl bovenaan om de code verder uit te voeren tot het volgende breakpoint. Observeer hoe de waarden van *table_inner_html* en *row_html* evolueren na elke iteratie van de lus.
+* Open de console. Voer deze functie uit: `update_board(my_board, 0, 1, 2)`. Observeer wat er gebeurt
+* Verander de waarden in `update_board` en probeer op die manier een X te plaatsen in het middelste vakje. Hint: met de <kbd>&#8593;</kbd>-toets kan je het vorig ingevoerde commando terug ophalen.
+* Zoek en open het bestand  `code.js` in de *Debugger*. Plaats een breakpoint in de binnenste for-loop van de functie `generate_board_html` door op de nummer van die regel te klikken.  Klik vervolgens op een vakje van het spelbord. Inspecteer de waarden van de variabele `table_inner_html` in de rechtse kolom van de debugger (onder *scopes*). 
+* Druk op de Run-pijl bovenaan om de code verder uit te voeren tot het volgende breakpoint. Observeer hoe de waarden van `table_inner_html` en `row_html` evolueren na elke iteratie van de lus.
 * Open de *Style editor* en zorg ervoor dat alle rode vakjes paars worden
 
 
@@ -148,16 +152,16 @@ Als resultaat krijgen beide de *div* en de paragraaf (*p*) een zwarte doorlopend
 
 ### Stijl toekennen
 
-Open het bestand stylesheet.css. 
+* Open het bestand stylesheet.css. 
+
 Probeer met behulp van CSS de lay-out in de afbeelding bovenaan deze pagina na te maken. 
-De kleuren mag je zelf kiezen.
+De kleuren mag je zelf kiezen. 
 
-Zorg ervoor dat minstens:
-
-* De vakjes groot genoeg zijn
-* Elk vakje zichtbaar gescheiden is door een rand
-* Het lege vakje dezelfde achtergrondkleur heeft als de tabel zelf
-* De tekst in de vakjes gecentreerd is
+Zorg ervoor dat:
+  * De vakjes groot genoeg zijn
+  * Elk vakje zichtbaar gescheiden is door een rand
+  * Het lege vakje dezelfde achtergrondkleur heeft als de tabel zelf
+  * De tekst in de vakjes gecentreerd is
 
 Als voorbeeld kan je kijken naar het bestand ./hoorcollege/ex7/stylesheet.css.
 
@@ -165,6 +169,7 @@ Alle mogelijke stijlen die je via CSS kan toekennen kan je vinden op https://www
 
 
 ## Deel 2: Interne representatie
+
 
 Een sliding puzzle, net als veel andere bordspellen, kunnen we in JavaScript voorstellen als een tweedimensionale lijst.
 
@@ -178,12 +183,16 @@ let my_puzzle = [[0, 1, 2],
 
 ```
 
-Het doel van deze sectie is om een JavaScript-functie te schrijven die bovenstaande lijstrepresentatie om kan zetten in HTML.
+### Doel
 
-Onderstaande code toont het einddoel van deze sectie.
-De functie *generate_puzzle_html* wordt opgeroepen met als input de lijstrepresentatie van onze puzzel.
-Het resultaat van de functie is de HTML-voorstelling van diezelfde puzzel.
-De functie zet dus de lijstrepresentatie om in de HTML-representatie:
+Het doel van deze sectie is om de JavaScript-functie `generate_puzzle_html` te schrijven. Deze functie zet de bovenstaande lijstrepresentatie om in een HTML-string.
+
+Wanneer de sectie correct is uitgevoerd en je `index.html` opent met Firefox, zal je puzzel visueel verschijnen.
+
+Onderstaande code toont het *einddoel* van deze sectie met behulp van de JavaScript-console.
+De functie `generate_puzzle_html` wordt opgeroepen met als input de lijstrepresentatie van onze puzzel.
+Het resultaat van de functie is een JavaScript-string met daarin een HTML-voorstelling van diezelfde puzzel.
+De JavaScript-functie `generate_puzzle_html` converteert dus de lijstrepresentatie in `my_puzzle` naar een HTML-representatie:
 
 ``` JavaScript
 
@@ -191,33 +200,35 @@ generate_puzzle_html(my_puzzle)
 >> "<table><tr><td class=\"emptyTile\"></td><td>1</td><td>2</td></tr><tr><td>7</td><td>4</td><td>8</td></tr><tr><td>3</td><td>5</td><td>6</td></tr></table>"
 ```
 
+
+
 ### Opdracht
 
-Voeg allereerst aan je HTML-bestand een *div* toe met als id *puzzle_container*.
+* Voeg aan je HTML-bestand een *div* toe met als id *puzzle_container*.
 Hierin zal de gegenereerde HTML-code toegevoegd worden.
 
 ``` HTML
 <div id="puzzle_container"></div>
 ```
 
-Vul nu de functie *generate_puzzle_html* in *code.js* aan zodat het resultaat van de functie een HTML-weergave is van de meegegeven puzzel, zoals in het bovenstaande voorbeeld.
+* Vul nu de functie *generate_puzzle_html* in *code.js* aan zodat het resultaat van de functie een HTML-weergave is van de meegegeven puzzel. **De uitvoering van generate_puzzle_html moet in de JavaScript-console een HTML-string als resultaat geven**.
 
 Baseer je op de HTML die je geschreven hebt in het eerste deel van deze oefenzitting.
 
-Indien de code correct werkt, zal de pagina de gegenereerde sliding puzzle toevoegen aan de *puzzle_container*.
-De code die hiervoor zorgt is reeds meegeleverd in de functie *draw_puzzle*.
+Indien de code correct werkt, zal de pagina na een refresh de gegenereerde sliding puzzle toevoegen aan `puzzle_container`.
+De code die hiervoor zorgt is reeds meegeleverd in de JavaScript-functie `draw_puzzle`. Na de pagina te verversen zal je puzzel dus visueel verschijnen.
 
-Indien de code niet correct werkt, open dan de Developer Tools van Firefox. Open vervolgens de debugger en plaats break points op kritische punten in je code. Inspecteer de waarden van je variabelen en probeer te achterhalen wat fout loopt.
+> :bulb: Bestudeer voor tips de oplossing in *./hoorcollege/ex7/code.js*. De functie *generate_board_html* van deze oefening werkt zeer gelijkaardig.
 
-Bestudeer voor tips de oplossing in *./hoorcollege/ex7/code.js*. De functie *generate_board_html* van deze oefening werkt zeer gelijkaardig.
+> :bulb: Indien de code niet werkt zoals verwacht, open dan de Developer Tools van Firefox. Open vervolgens de debugger en plaats breakpoints op kritische punten in je code. Inspecteer de waarden van je variabelen en probeer te achterhalen wat fout loopt.
 
 ## Deel 3: Spelfunctionaliteit
 
-Op dit punt in de oefenzitting heeft je spel een lay-out die automatisch gegenereerd kan worden vanuit de interne lijstrepresentatie.
+Op dit punt in de oefenzitting heeft je spel een lay-out die automatisch gegenereerd kan worden vanuit een interne lijstrepresentatie.
 
 ### Modeloplossing
 
-Indien je aan de start van de tweede oefenzitting nog niet op dit punt bent gekomen, kan je voor de volgende delen verder werken vanaf een modeloplossing.
+**Indien je aan de start van de tweede oefenzitting nog niet op dit punt bent gekomen**, kan je voor de volgende delen verder werken vanaf een modeloplossing.
 
 Indien je eigen aanpassingen hebt gemaakt aan de bestanden in *solution*, zal je deze wijzigingen eerst moeten committen.
 
@@ -234,9 +245,7 @@ Deze code maakt een back-up van je eigen oplossingsbestanden. Je kan deze in de 
 Voer vervolgens de volgende commando's uit om de modeloplossing te laden:
 
 ``` bash
-$ cd /pad/naar/oefenzitting-javascript
 $ git checkout deel2
-
 ```
 
 Door dit commando uit te voeren wordt de inhoud van de modeloplossing in de folder *solution* geplaatst.
@@ -245,7 +254,7 @@ Door dit commando uit te voeren wordt de inhoud van de modeloplossing in de fold
 
 In deze sectie schrijven we JavaScript-functies die op basis van de interne lijstrepresentatie van een puzzel ons toelaten het spel te spelen.
 
-Voeg onderstaande functies toe aan *code.js*. Gebruik telkens de *Console* in de *Developer Tools* om deze functies te testen. De voorbeelden tonen telkens de console-output die we verwachten indien je functie correct is geschreven.
+Voeg onderstaande functies toe aan `code.js`. Gebruik telkens de *Console* in de *Developer Tools* om deze functies te testen. De voorbeelden tonen telkens de console-output die we verwachten indien je functie correct is geschreven.
 
 ### Functies
 
