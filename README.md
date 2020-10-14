@@ -9,6 +9,7 @@ In deze oefenzitting zullen we een Sliding Puzzle maken in HTML, CSS en JavaScri
 
 - [Inhoudsopgave](#inhoudsopgave)
 - [Voorbereiding](#voorbereiding)
+- [Video](#video)
 - [Structuur repository](#structuur-repository)
 - [Toolchain](#toolchain)
   - [Editor](#editor)
@@ -38,6 +39,13 @@ Start met deze oefenzitting door de repository te clonen naar je eigen machine.
 ``` shell
 $ git clone https://github.com/informatica-werktuigen/oefenzitting-javascript.git
 ```
+
+# Video
+
+Video-playlist ter voorbereiding van deze oefenzitting:
+
+[![Bekijk de video](https://img.youtube.com/vi/fw6kyTBAJro/hqdefault.jpg)](https://www.youtube.com/playlist?list=PLNALXJPvImgt5QcsoDXA3QekBLrUDeIRV)
+
 
 # Structuur repository
 
