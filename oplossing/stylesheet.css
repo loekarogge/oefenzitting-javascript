@@ -1,3 +1,21 @@
 table {
-    border: 1px solid #000000;
+    background-color:gray;
+    border-spacing: 15px;
+    empty-cells: hide;
+
+    
+}
+
+
+
+.puzzelcel{
+
+
+    width: 150px;
+    height: 150px;
+    font-size: xx-large;
+    background-color: #fffff0;
+    border: 1px solid grey;
+    text-align: center; 
+    vertical-align: middle;
 }
