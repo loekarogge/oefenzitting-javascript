@@ -19,6 +19,20 @@ function generate_puzzle_html(puzzle){
     //TODO: Implementeer deze functie!
     //puzzle bevat een tweedimensionale lijst die de sliding puzzle voorstelt
     //Kijk naar de functie generate_board_html in voorbeeld 7 uit het hoorcollege voor inspiratie
+    let result = "<table>";
+    my_puzzle.forEach(row => {
+        result += "<tr>";
+        row.forEach(cell => {
+            result += `<td class="puzzelcel">`;
+            result += cell;
+            result += `</td>`;
+        });
+        result += "</tr>";
+    });
+    result += "</table>";
+    return result;
 }
+
+
 
 
